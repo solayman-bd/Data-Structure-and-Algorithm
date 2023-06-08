@@ -1,0 +1,32 @@
+# for tree means no cycle present
+void (int node) 
+{
+    cout << "node: " << endl;
+    # base case
+    if node does not have any child
+        return;
+    # general case
+    for all child of nodes
+    dfs(child);
+}
+-------------------------------------
+# For graph -> cycle present or not present. It will work for all graph.
+
+//visited array
+
+void dfs(int node)
+{
+    cout << "node: " << endl;
+    visited[node] =1 ;
+    for all adjacent_nodes of node 
+        if visited[node]==0:
+            dfs(adjacent_nodes);
+
+}
+
+# Time complexity
+1. Every node at most one time selected
+2. Every edge is checked twice
+For both BFS and DFS O(V+E)
+# Space complexity
+For both BFS and DFS O(V)

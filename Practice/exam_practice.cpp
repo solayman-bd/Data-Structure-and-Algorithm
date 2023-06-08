@@ -2,32 +2,38 @@
 using namespace std;
 
 
-void deleteValue(list<int> &l, int value) {
-  for (auto i = l.begin(); i != l.end(); i++) {
-    if (*i == value) {
-      l.erase(i);
-      break;
-    }
-  }
-}
+int main()
+{
+   int n1,n2;
+   cin>>n1;
+   set<int>a;
+   set<int>b;
+   for(int i=0;i<n1;i++)
+   {
+       int inp;
+       cin>>inp;
+       a.insert(inp);
+   }
+   cin>>n2;
+    for(int i=0;i<n2;i++)
+   {
+       int inp;
+       cin>>inp;
+       b.insert(inp);
+   }
+   set<int>un;
+   for(auto it:a)
+   {
+      un.insert(it);
+   }
+   for(auto it:b)
+   {
+       un.insert(it);
+   }
+   for(auto it:un)
+   {
+       cout<<it<<" ";
+   }
 
-int main() {
-  list<int> l;
-  int n, value;
-  cin >> n;
-
-  for (int i = 0; i < n; i++) {
-    int item;
-    cin >> item;
-    l.push_back(item);
-  }
-  cin >> value;
-  deleteValue(l, value);
-
-
-  for (auto i= l.begin(); i != l.end(); i++) {
-    cout << *i << " ";
-  }
-  cout << endl;
-  return 0;
+    return 0;
 }

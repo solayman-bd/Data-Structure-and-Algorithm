@@ -79,6 +79,36 @@ public:
         sz++;
     }
 
+
+    void insertMid(int index, int data)
+    {
+        if(index > sz)
+        {
+            return;
+        }
+        if(index==0)
+        {
+            InsertAtHead(data);
+            return;
+        }
+        node *a = head;
+        int cur_index = 0;
+        while(cur_index!= index-1)
+        {
+            a = a->nxt;
+            cur_index++;
+
+        }
+        // a = cur_index - 1
+        node *newnode = CreateNewNode(data);
+        newnode->nxt = a->nxt;
+        newnode->prv = a;
+        node *b = a->nxt;
+        b->prv = newnode;
+        a->nxt = newnode;
+        sz++;
+    }
+
     //Deletes the given index O(n)
     void Delete(int index)
     {

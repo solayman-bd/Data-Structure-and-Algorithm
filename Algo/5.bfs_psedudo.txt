@@ -1,0 +1,29 @@
+pseudocode of BFS
+=================
+
+Time complexity:
+Space complexity:
+
+input-> Connected graph and a source
+Output-> Traverse all the nodes and print the traversal
+
+
+BFS (graph, source):
+
+- Initiate an array called "visited" and an empty queue.-> space complexity O(V)
+- mark visited[source]=1 and q.push(source)
+- while the queue is not empty: ->O(Vertex)
+    -head=q.front()
+    -q.pop()
+    -print node "head"
+    -For all adjacent nodes of ""head": -> O(2*edge)
+        -if visited[adj_node]==0:
+            -visited[adj_node]=1 and q.push(adj_node)
+=============================
+Total time complexity: O(V+E)
+For a complete graph,
+                     -E= V*V
+                     -O(sq(V))
+=============================
+Total Space complexity:
+                    -O(V)
